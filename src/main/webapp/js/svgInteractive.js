@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function changeR(rVal) {
-    document.getElementById("rLab").innerHTML = "r = " + rVal;
+    document.getElementById("rLab").innerHTML = "R = " + rVal;
     document.getElementById("rValue").setAttribute("value", rVal);
+    updatePoints(document.getElementById("g1"), rVal);
+
 }

@@ -1,9 +1,9 @@
 package ru.cosmosway.web02.validation;
 
 public class Validator {
-    private final int MIN_X = -3;
-    private final int MAX_XY = 3;
-    private final int MIN_Y = -5;
+    private final int MIN_X = -6;
+    private final int MAX_XY = 6;
+    private final int MIN_Y = -6;
     private final int MIN_R = 1;
     private final int MAX_R = 5;
 

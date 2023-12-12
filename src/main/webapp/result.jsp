@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <div class="result-table">
     <table id="result-table" cellspacing="6" cellpadding="15">
         <caption><b>Результат</b></caption>
@@ -11,14 +13,17 @@
             <th>r</th>
             <th>Result</th>
         </tr>
-        <tr>
-            <td>${row.getX()}</td>
-            <td>${row.getY()}</td>
-            <td>${row.getR()}</td>
-            <td>${row.getResult()}</td>
-            <td>${row.getTime()}</td>
-            <td>${row.getScriptTime()}</td>
-        </tr>
+        <c:forEach items="${table.getTable()}" var="el">
+            <tr>
+                <td></td>
+                <td>${el.getTime()}</td>
+                <td>${el.getExecTime()}</td>
+                <td>${el.getX()}</td>
+                <td>${el.getY()}</td>
+                <td>${el.getR()}</td>
+                <td>${el.getResult()}</td>
+            </tr>
+        </c:forEach>
     </table>
 </div>
 

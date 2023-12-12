@@ -1,8 +1,8 @@
 document.getElementById('valForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    let x = document.getElementById('x');
+    let x = document.querySelectorAll('input[type="radio"]:checked')[0];
     let y = document.getElementById('y');
-    let r = document.querySelectorAll('input[type="radio"]:checked')[0];
+    let r = document.getElementById('rValue');
 
     if (validate(x, y, r)) {
         send(x.value, y.value, r.value);
@@ -151,16 +151,16 @@ window.onload = function() {
     updatePoints(document.getElementById("g1"), 3);
 
 // Пример изменения точек при изменении значения R
-    var slider = document.createElement("input");
-    slider.type = "range";
-    slider.min = 1;
-    slider.max = 6;
-    slider.step = 0.1;
-    slider.value = 3;
-
-    slider.addEventListener("input", function () {
-        updatePoints(document.getElementById("g1"), parseFloat(slider.value));
-    });
-
-    document.body.appendChild(slider);
+//     var slider = document.createElement("input");
+//     slider.type = "range";
+//     slider.min = 1;
+//     slider.max = 6;
+//     slider.step = 0.1;
+//     slider.value = 3;
+//
+//     slider.addEventListener("input", function () {
+//         updatePoints(document.getElementById("g1"), parseFloat(slider.value));
+//     });
+//
+//     document.body.appendChild(slider);
 }
