@@ -19,7 +19,7 @@
         </div>
         <div id="message"></div>
         <jsp:include page="input.jsp"/>
-        <jsp:include page="result.jsp"/>
+        <jsp:include page="table.jsp"/>
     </div>
 </body>
 

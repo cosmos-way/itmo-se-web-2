@@ -1,8 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="ru.cosmosway.web02.beans.RowCheckout" %>
+<%@ page import="ru.cosmosway.web02.beans.Table" %>
 
 <div class="result-table">
-    <table id="result-table" cellspacing="6" cellpadding="15">
+    <table id="result-table">
+        <jsp:useBean id="check" class="ru.cosmosway.web02.beans.RowCheckout" scope="session"/>
         <caption><b>Результат</b></caption>
         <tr>
             <th>#</th>
@@ -13,17 +15,21 @@
             <th>r</th>
             <th>Result</th>
         </tr>
-        <c:forEach items="${table.getTable()}" var="el">
-            <tr>
-                <td></td>
-                <td>${el.getTime()}</td>
-                <td>${el.getExecTime()}</td>
-                <td>${el.getX()}</td>
-                <td>${el.getY()}</td>
-                <td>${el.getR()}</td>
-                <td>${el.getResult()}</td>
-            </tr>
-        </c:forEach>
+        <tr>
+            <td></td>
+            <td><%=check.getTime()%>
+            </td>
+            <td><%=check.getExecTime()%>
+            </td>
+            <td><%=check.getX()%>
+            </td>
+            <td><%=check.getY()%>
+            </td>
+            <td><%=check.getR()%>
+            </td>
+            <td><%=check.getResult()%>
+            </td>
+        </tr>
     </table>
 </div>
 

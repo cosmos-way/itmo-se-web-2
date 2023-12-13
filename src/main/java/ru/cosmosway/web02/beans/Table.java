@@ -1,13 +1,13 @@
 package ru.cosmosway.web02.beans;
 
+import jakarta.ejb.Stateful;
+
 import java.beans.JavaBean;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-@JavaBean
+@Stateful
 public class Table implements Serializable {
-    private static final long serialVersionUID = 1L;
-
     private List<RowCheckout> table = new ArrayList<>();
 
     public Table() {

@@ -7,20 +7,18 @@ import static java.lang.Math.pow;
 
 @JavaBean
 public class RowCheckout implements Serializable {
-    private static final long serialVersionUID = 2L;
-
     private float x;
     private float y;
     private float r;
-    private String result;
+    private boolean areaIntersection;
     private String time;
     private String execTime;
 
-    public RowCheckout(float x, float y, float r, String result, String time, String execTime) {
+    public RowCheckout(float x, float y, float r, boolean areaIntersection, String time, String execTime) {
         this.x = x;
         this.y = y;
         this.r = r;
-        this.result = result;
+        this.areaIntersection = areaIntersection;
         this.time = time;
         this.execTime = execTime;
     }
@@ -49,12 +47,12 @@ public class RowCheckout implements Serializable {
         this.r = r;
     }
 
-    public String getResult() {
-        return result;
+    public boolean getResult() {
+        return areaIntersection;
     }
 
-    public void setResult(String result) {
-        this.result = result;
+    public void setResult(boolean areaIntersection) {
+        this.areaIntersection = areaIntersection;
     }
 
     public String getTime() {
