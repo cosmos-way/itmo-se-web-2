@@ -22,7 +22,7 @@
         <!-- Добавление делений на осях с помощью скрипта -->
     </svg>
 </div>
-<form id="valForm" method="get">
+<form id="valForm">
     <label>Координата X:</label>
     <div class="x-radio">
         <label><input type="radio" name="x" value="-2" required>-2</label>

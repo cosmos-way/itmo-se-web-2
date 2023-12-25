@@ -20,6 +20,7 @@ public class Table implements Serializable {
     public void addRow(RowCheckout row){
         table.add(row);
     }
+    public RowCheckout getLast(){return table.listIterator().next();}
 
     public List<RowCheckout> getTable() {
         return table;

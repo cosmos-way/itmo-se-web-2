@@ -35,8 +35,9 @@ public class AreaCheckServlet extends HttpServlet {
             Validator validator = new Validator(x, y, r);
             long startTime = System.nanoTime();
             if (validator.validate()) {
-                boolean areaIntersection = checkout(x, y, r);
+
                 LocalTime time = LocalTime.now();
+                boolean areaIntersection = checkout(x, y, r);
                 String currentTime = time.format(formatter);
                 String scriptTime = String.format("%.2f", (double) (System.nanoTime() - startTime) * 0.0001);
                 RowCheckout row = new RowCheckout(x, y, r, areaIntersection, currentTime, scriptTime);
@@ -46,9 +47,12 @@ public class AreaCheckServlet extends HttpServlet {
                 if (table == null) table = new Table();
 
                 table.getTable().add(row);
-                request.getSession().setAttribute("table", table);
-                request.getSession().setAttribute("check", row);
 
+                request.getSession().setAttribute("table", table);
+//                request.getSession().setAttribute("check", row);
+                request.setAttribute("check", row);
+                request.setAttribute("resultIndex", table.getTable().size());
+//                request.sendRedirect("/result.jsp");
                 getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
             }
 

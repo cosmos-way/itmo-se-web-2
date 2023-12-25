@@ -65,16 +65,6 @@
             <plugin>
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
-                <version>4.2.1.Final</version>
-                <configuration>
-                    <hostname>web01.cosmosway.ru</hostname>
-                    <port>8080</port>
-                    <name>n1</name>
-                    <server-args>
-                        <server-arg>-Djboss.server.base.dir=/opt/WildFly/standalone/</server-arg>
-                        <server-arg>-b=0.0.0.0</server-arg>
-                    </server-args>
-                </configuration>
             </plugin>
         </plugins>
     </build>

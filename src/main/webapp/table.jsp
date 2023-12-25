@@ -33,7 +33,7 @@
             </td>
             <td><%=row.getR()%>
             </td>
-            <td><%=row.getResult()%>
+            <td><%=row.getAreaIntersection()%>
             </td>
         </tr>
         <%
@@ -41,6 +41,7 @@
             }
         %>
     </table>
+
 </div>
 
 

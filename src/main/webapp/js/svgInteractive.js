@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
             async: false,
             data: {"x": toSendX, "y": toSendY, "r": radius},
             success: function (data) {
-                window.location.replace('./result.jsp');
+                // window.location.replace('./result.jsp');
             },
             error: function (xhr, textStatus, err) {
                 showError(document.getElementById('buttons-table'), "readyState: " + xhr.readyState + "\n" +

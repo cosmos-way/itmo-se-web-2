@@ -17,7 +17,8 @@ function send(x, y, r) {
             async: false,
             data: {"x": x, "y": y, "r": r},
             success: function (data) {
-                window.location.replace("./result.jsp")
+                console.log(data)
+                document.body.innerHTML = data;
             }, error: function (xhr, textStatus, err) {
                 showError(document.getElementById('buttons-table'), "readyState: " + xhr.readyState + "\n" +
                     "responseText: " + xhr.responseText + "\n" +
