@@ -54,6 +54,10 @@ public class AreaCheckServlet extends HttpServlet {
                 request.setAttribute("resultIndex", table.getTable().size());
 //                request.sendRedirect("/result.jsp");
                 getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
+            }else
+            {
+                getServletContext().setAttribute("error", "Ошибка валидации");
+                request.getRequestDispatcher("/error.jsp").forward(request, response);
             }
 
 
@@ -66,7 +70,20 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
     public static boolean checkout(float x, float y, float r) {
-        return (x >= 0 && x <= r && y >= 0 && y <= r) || (x <= 0 && x >= -r && y <= 0 && y >= -r) || (x >= 0 && y >= 0 && pow(x, 2) + pow(y, 2) <= pow(r / 2, 2));
+        return checkTriangle(x,y,r) || checkRectangle(x,y,r) || checkCircle(x,y,r);
     }
+
+    public static boolean checkCircle(float x, float y, float r) {
+        return x >= 0 && y >= 0 && x*x + y*y <= (double)r*r/4;
+    }
+
+    public static boolean checkTriangle(float x, float y, float r) {
+        return x >=0 && y <=0 && (y + x <=(double)r/2);
+    }
+
+    public static boolean checkRectangle(float x, float y, float r) {
+        return x <= 0 && y <= 0 && Math.abs(x) <= r && Math.abs(y) <= (double)r;
+    }
+
 
 }
